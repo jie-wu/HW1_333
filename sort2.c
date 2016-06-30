@@ -1,6 +1,6 @@
-#include "SelectionSort.h"
+#include "sort2.h"
 
-void selection_sort(int *a, int n) {
+void sort2(int *a, int n) {
 	int i, j, temp;
 	for(i = 0; i < n; i++) {
 		int min = i;
