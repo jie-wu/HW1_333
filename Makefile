@@ -8,7 +8,7 @@ CFLAGS=-I.
 #linker rule
 testSort: main.o insertionSort.o BubbleSort.o SelectionSort.o
 #	gcc -o testSort main.o insertionSort.o BubbleSort.o SelectionSort.o
-	$(LD) -o testSort main.o insertSort.o BubbleSort.o SelectionSort.o
+	$(LD) -o testSort main.o insertionSort.o BubbleSort.o SelectionSort.o
 	
 #compiler rules
 main.o: main.c
