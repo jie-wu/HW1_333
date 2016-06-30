@@ -6,9 +6,9 @@ LD=gcc
 CFLAGS= -std=c99 -I.
 
 #linker rule
-testSort: main.o insertionSort.o BubbleSort.o SelectionSort.o
-#	gcc -o testSort main.o insertionSort.o BubbleSort.o SelectionSort.o
-	$(LD) -o testSort main.o insertionSort.o BubbleSort.o SelectionSort.o
+testSort: main.o insertionSort.o sort1.o sort2.o
+#	gcc -o testSort main.o insertionSort.o sort1.o sort2.o
+	$(LD) -o testSort main.o insertionSort.o sort1.o sort2.o
 	
 #compiler rules
 main.o: main.c
@@ -18,12 +18,12 @@ main.o: main.c
 insertionSort.o: insertionSort.c
 #gcc -c -I. insertionSort.c
 	$(CC) -c $(CFLAGS) insertionSort.c
-BubbleSort.o: BubbleSort.c
-#gcc -c -I. BubbleSort.c
-	$(CC) -c $(CFLAGS) BubbleSort.c	
-SelectionSort.o: SelectionSort.c
-#gcc -c -I. SelectionSort.c
-	$(CC) -c $(CFLAGS) SelectionSort.c	
+sort1.o: sort1.c
+#gcc -c -I. sort1.c
+	$(CC) -c $(CFLAGS) sort1.c	
+sort2.o: sort2.c
+#gcc -c -I. sort2.c
+	$(CC) -c $(CFLAGS) sort2.c	
 
 #clean up procedure		
 clean:
