@@ -3,7 +3,7 @@ CC=gcc
 #linker
 LD=gcc
 #include file directory
-CFLAGS=-I.
+CFLAGS= -std=c99 -I.
 
 #linker rule
 testSort: main.o insertionSort.o BubbleSort.o SelectionSort.o
