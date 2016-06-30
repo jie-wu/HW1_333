@@ -3,8 +3,8 @@
 #include <string.h>
 #include <time.h>
 #include <insertionSort.h>
-#include <BubbleSort.h>
-#include <SelectionSort.h>
+#include <sort1.h>
+#include <sort2.h>
 //add new header files for sort1 and sort2<-----
 
 #define VECTORSIZE 100000
@@ -33,11 +33,11 @@ int main(){
  /*copy vector to test vector*/
 	memmove(testVector,originalVector,sizeof(originalVector));
 	start=clock(); /*start timer*/
-	bubble_sort(testVector,VECTORSIZE);
-	printf ("Bubble sort took %d ms\n",(clock()-start)*1000/CLOCKS_PER_SEC);
+	sort1(testVector,VECTORSIZE);
+	printf ("sort1 took %d ms\n",(clock()-start)*1000/CLOCKS_PER_SEC);
  /*check that it is sorted*/
  if(!compareVectors(sortedVector,testVector,VECTORSIZE)){
-		printf("Bubble sort failed\n");
+		printf("Sort1 failed\n");
 		return 0;
 	}	
 
@@ -46,11 +46,11 @@ int main(){
  /*copy vector to test vector*/
 	memmove(testVector,originalVector,sizeof(originalVector));
 	start=clock(); /*start timer*/
-	selection_sort(testVector,VECTORSIZE);
-	printf ("Selection sort took %d ms\n",(clock()-start)*1000/CLOCKS_PER_SEC);
+	sort2(testVector,VECTORSIZE);
+	printf ("sort2 took %d ms\n",(clock()-start)*1000/CLOCKS_PER_SEC);
  /*check that it is sorted*/
  if(!compareVectors(sortedVector,testVector,VECTORSIZE)){
-		printf("Selection sort failed\n");
+		printf("Sort2 failed\n");
 		return 0 ;
 	}
 	return 1;
